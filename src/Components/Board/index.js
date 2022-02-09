@@ -1,18 +1,12 @@
 import React from "react";
 import Square from "../Square";
 
-function Board(props) {
+function Board({ squares, onClick }) {
   return (
-    <div>
-      <Square props={props}></Square>
-      <Square props={props}></Square>
-      <Square props={props}></Square>
-      <Square props={props}></Square>
-      <Square props={props}></Square>
-      <Square props={props}></Square>
-      <Square props={props}></Square>
-      <Square props={props}></Square>
-      <Square props={props}></Square>
+    <div className="board">
+      {squares.map((square, i) => (
+        <Square key={i} value={square} onClick={() => onClick(i)} />
+      ))}
     </div>
   );
 }
