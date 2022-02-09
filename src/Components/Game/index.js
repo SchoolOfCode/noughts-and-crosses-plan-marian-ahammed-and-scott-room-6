@@ -44,6 +44,7 @@ function Game() {
     if (winner || squares[i]) {
       return;
     }
+
     squares[i] = xO;
     setHistory([...historyPoint, squares]);
     setStepNumber(historyPoint.length);
@@ -58,6 +59,7 @@ function Game() {
   function renderMoves() {
     history.map((_step, move) => {
       const destination = move ? `go to move #${move}` : "Go to start";
+
       return (
         <li key={move}>
           <button onClick={() => jumpTo(move)}>{destination}</button>
@@ -65,6 +67,7 @@ function Game() {
       );
     });
   }
+
   return (
     <>
       <h1>Welcome to noughts and crosses</h1>{" "}
