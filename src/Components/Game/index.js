@@ -56,7 +56,8 @@ function Game() {
     setXIsNext(step % 2 === 0);
   }
 
-  function renderMoves() {
+  // function renderMoves() {
+  const renderMoves = () =>
     history.map((_step, move) => {
       const destination = move ? `go to move #${move}` : "Go to start";
 
@@ -66,7 +67,7 @@ function Game() {
         </li>
       );
     });
-  }
+  // }
 
   return (
     <>
